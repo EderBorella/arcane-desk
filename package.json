@@ -1,0 +1,26 @@
+{
+  "name": "arcane-desk",
+  "version": "1.0.0",
+  "description": "TODO: Create description",
+  "private": true, 
+  "workspaces": [
+    "packages/*" 
+  ],
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "arcane-desk"
+  },
+  "keywords": [
+    "rpg",
+    "support",
+    "D&D",
+    "tabletop",
+    "rpg"
+  ],
+  "author": "Eder Borella",
+  "license": "ISC"
+}
