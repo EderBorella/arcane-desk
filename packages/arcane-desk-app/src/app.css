@@ -1,3 +1,8 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
+
+/* packages/arcane-desk-app/src/app.css */
+body {
+    @apply bg-stone-100 dark:bg-stone-900;
+}
