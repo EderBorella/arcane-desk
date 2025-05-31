@@ -3,15 +3,19 @@
 	import heroImage from '$lib/media/Web Banner.jpg';
 	import { fade } from 'svelte/transition';
 	import { goto } from '$app/navigation';
+	import type { FeatureItem } from '$lib/components/FeaturesSection.svelte';
 
 	const pageHeroTitle = 'Arcane Desk';
 	const pageHeroSubtitle = 'Unleash the full potential of your tabletop role-playing games';
 	const ctaText = 'Sign up for free';
 
-	const pageFeatures = [
+	const pageFeatures: FeatureItem[] = [
 		{
 			title: 'Dynamic Table Organizer',
-			description: 'Effortlessly manage all your crucial game information.'
+			description: 'Effortlessly manage all your crucial game information.',
+			enableCardHoverEffect: true,
+			href: '/tables',
+			target: '_blank'
 		},
 		{ title: 'Integrated Dice Roller', description: 'Leave your physical dice at home!' },
 		{ title: 'Customizable Character Sheets', description: 'Tailor your character to your liking.' }
@@ -48,7 +52,6 @@
 				on:ctaClick={handleSignUpClick}
 				wispCount={16}
 			/>
-
 			<FeaturesSection features={pageFeatures} />
 			<Footer />
 		</div>

@@ -1,10 +1,15 @@
-<script lang="ts">
-	import { Card } from '$lib/components'; // Assuming Card is in $lib/components
-
-	interface FeatureItem {
+<script module lang="ts">
+	export interface FeatureItem {
 		title: string;
 		description: string;
+		href?: string; // Optional: URL for the feature card to link to
+		enableCardHoverEffect?: boolean; // Optional: Controls hover effect for this specific card
+		target?: string; // Optional: Target attribute for the link eg. '_blank'
 	}
+</script>
+
+<script lang="ts">
+	import { Card } from '$lib/components'; // Assuming Card is in $lib/components
 
 	/**
 	 * An array of feature objects to display.
@@ -48,7 +53,13 @@
 			<ul class="mt-6 grid grid-cols-1 gap-6 md:grid-cols-3">
 				{#each features as feature (feature.title)}
 					<li>
-						<Card className="h-[10rem]" variant="default" padding="default">
+						<Card
+							className="h-[10rem]"
+							variant="default"
+							padding="default"
+							enableHoverEffect={feature.enableCardHoverEffect}
+							href={feature.href}
+						>
 							<h3
 								class="text-xl font-bold text-stone-900 dark:text-stone-100"
 								title={feature.title}

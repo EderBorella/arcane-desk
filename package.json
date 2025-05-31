@@ -2,9 +2,9 @@
   "name": "arcane-desk",
   "version": "1.0.0",
   "description": "TODO: Create description",
-  "private": true, 
+  "private": true,
   "workspaces": [
-    "packages/*" 
+    "packages/*"
   ],
   "main": "index.js",
   "scripts": {
