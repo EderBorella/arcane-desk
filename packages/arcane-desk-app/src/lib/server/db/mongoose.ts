@@ -1,7 +1,7 @@
 import mongoose, { type Mongoose as MongooseInstanceType } from 'mongoose';
 import { env } from '$env/dynamic/private'; // For SvelteKit environment variables
 import GameTableModel, { type IGameTableInput } from '$lib/server/models/GameTable';
-import dndTablesData from '$lib/tables/D&D.json'; // SvelteKit's $lib alias should resolve this
+import rpgTablesData from '$lib/tables/rpg-ref.json'; // SvelteKit's $lib alias should resolve this
 
 const MONGODB_URI = env.MONGODB_URI || 'mongodb://localhost:27017/arcane_desk_db';
 
@@ -17,7 +17,7 @@ async function seedDatabaseIfEmpty(): Promise<void> {
         const count = await GameTableModel.countDocuments().exec();
         if (count === 0) {
             console.log('MongoDB: GameTable collection is empty. Seeding data...');
-            const tablesToSeed = dndTablesData as IGameTableInput[];
+            const tablesToSeed = rpgTablesData as IGameTableInput[];
             await GameTableModel.insertMany(tablesToSeed);
             console.log('MongoDB: GameTable data seeded successfully.');
         } else {
